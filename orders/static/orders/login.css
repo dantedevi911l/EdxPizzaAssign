@@ -1,0 +1,87 @@
+body {
+	background-image: url('pizza_large_size.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+}
+
+.container {
+	height: 100%;
+	align-content: center;
+}
+
+.sign-in {
+	height: 370px;
+	width: 45%;
+	margin-top: 20px;
+	margin-bottom: auto;
+	background-color: rgba(0,0,0,0.5) !important;
+}
+
+.sign-up {
+	height: 400px;
+	width: 45%;
+	margin-top: 20px;
+	margin-bottom: auto;
+	background-color: rgba(0,0,0,0.5) !important;	
+}
+
+.card-header h3 {
+	color: white;
+}
+
+.error-message {
+	color: white;
+}
+
+.input-group-prepend span {
+	width: 50px;
+	margin-left: 10px;
+	background-color: #FFC312;
+	color: black;
+	border: 0 !important;
+}
+
+.login_btn {
+	color: black;
+	background-color: #FFC312;
+	width: 100px;
+	margin-right: 10px;
+}
+
+.login_btn:hover {
+	background-color: white;
+}
+
+.links {
+	color: white;
+}
+
+.links a {
+	color: #2196F3;
+	margin-left: 4px;
+}
+
+.invisible {
+	display: none;
+	visibility: hidden;
+}
+
+.visible {
+	display: block;
+	visibility: visible;
+}
+
+
+input[type="text"] {
+	margin-right: 10px;
+}
+
+input[type="password"] {
+	margin-right: 10px;
+}
+
+input[type="email"] {
+	margin-right: 10px;
+}
+

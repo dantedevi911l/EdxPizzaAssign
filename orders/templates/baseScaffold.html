@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href='{% static "orders/bootstrap.min.css" %}'>
+	<link rel="stylesheet" type="text/css" href='{% static "orders/fontawesome.css" %}'>
+	<script type="text/javascript" src='{% static "orders/jquery_min.js" %}'></script>
+	<script type="text/javascript" src='{% static "orders/bootstrap_min.js" %}'></script>
+	<script type="text/javascript" src='{% static "orders/popper.js" %}'></script>
+	{% block css %} {% endblock %}
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	{% block body %}
+	{% endblock %}
+</body>
+</html>
