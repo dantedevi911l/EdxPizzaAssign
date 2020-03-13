@@ -67,18 +67,18 @@ class DinnerPlatters(models.Model):
 
 
 class Orders(models.Model):
-    pizza = models.ManyToManyField(Pizza)
+    pizza = models.ManyToManyField(Pizza,blank=True)
     pizza_quantity = models.IntegerField()
-    topping = models.ManyToManyField(Topping)
-    pasta = models.ManyToManyField(Pasta)
+    topping = models.ManyToManyField(Topping,blank=True)
+    pasta = models.ManyToManyField(Pasta,blank=True)
     pasta_quantity = models.IntegerField()
-    salads = models.ManyToManyField(Salads)
+    salads = models.ManyToManyField(Salads,blank=True)
     salads_quantity = models.IntegerField()
-    dinner_platters = models.ManyToManyField(DinnerPlatters)
+    dinner_platters = models.ManyToManyField(DinnerPlatters,blank=True)
     dinner_platter_quantity = models.IntegerField()
-    subs = models.ManyToManyField(Subs)
+    subs = models.ManyToManyField(Subs,blank=True)
     subs_quantity = models.IntegerField()
-    sub_add_on = models.ManyToManyField(SubAddOn)
+    sub_add_on = models.ManyToManyField(SubAddOn,blank=True)
     total_price = models.DecimalField(max_digits = 7,decimal_places = 2)
     user = models.ForeignKey(User, on_delete = models.CASCADE)
 
