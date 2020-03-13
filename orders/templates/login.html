@@ -20,7 +20,7 @@
 				</div>
 				<div class="class-body">
 					<form action="{% url 'login' %}" method="POST">
-						<!-- csrf token for django forms, without it, submitting a form 
+						<!-- csrf token for django forms, without it, submitting a form
  			     			returns a 403 error -->
  							{% csrf_token %}
 						<div class="input-group form-group">
@@ -35,7 +35,7 @@
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							<input type="password" class="form-control" name="password" placeholder="password" required >
-							
+
 						</div>
 						<div class="form-group ">
 							<input type="submit" value="Login" class="btn float-right login_btn">
@@ -55,7 +55,7 @@
 					<!--
 						<div class="d-flex justify-content-center">
 							<a href="#">Forgot your password?</a>
-						</div> 
+						</div>
 					-->
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 				</div>
 					<div class="class-body">
 					<form action="{% url 'signup' %}"  method="POST">
-						<!-- csrf token for django forms, without it, submitting a form 
+						<!-- csrf token for django forms, without it, submitting a form
  			     			returns a 403 error -->
  						{% csrf_token %}
 						<div class="input-group form-group">
@@ -101,7 +101,7 @@
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							<input type="password" class="form-control" name="password" placeholder="password" required minlength="5">
-							
+
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Sign up" class="btn float-right login_btn">

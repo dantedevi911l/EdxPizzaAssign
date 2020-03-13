@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	
+
 	document.querySelector(".sign-up").classList.add("invisible");
 
 	var signup = document.querySelector(".sign-up-button");
