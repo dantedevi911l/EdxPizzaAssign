@@ -1,0 +1,33 @@
+/*
+body {
+	background-image: url('PizzaBackground.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+   opacity: 1.0;
+}*/
+
+#leftBackground {
+   border-width:  1px;
+   border-color: black;
+   border-style: solid;
+   /*background-image: url('pizza_medium_size.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   */
+   width: 30%;
+}
+
+#rightBackground{
+   border-width:  1px;
+   border-color: black;
+   border-style: solid;
+   width: 70%;
+}
+
+#customize {
+   position: absolute;
+   right: 0px;
+   top: 0px;
+   opacity: 0.85;
+}

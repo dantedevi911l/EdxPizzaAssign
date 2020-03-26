@@ -1,0 +1,92 @@
+{% extends "baseScaffold.html" %}
+
+{% block css %}
+   {% load static %}
+   <link rel="stylesheet" type="text/css" href="{% static 'orders/menuOrder.css' %}">
+   <script type="text/javascript">
+      const pizzas = new Object();
+
+      {% for type,values in pizzas.items %}
+         pizzas['{{type}}'] = {} ;
+         {% for sub_type,sub_values in values.items %}
+            pizzas['{{type}}']['{{sub_type}}']  = {};
+            {% for toppingQuantity,size_values in sub_values.items %}
+               pizzas['{{type}}']['{{sub_type}}']['{{toppingQuantity}}'] = {};
+               {% for size,price in size_values.items %}
+                  pizzas['{{type}}']['{{sub_type}}']['{{toppingQuantity}}']['{{size}}'] = {{price}};
+               {% endfor %}
+            {% endfor %}
+         {% endfor %}
+      {% endfor %}
+
+   </script>
+   <script type="text/javascript" src="{% static 'orders/menuOrder.js' %}"> </script>
+{% endblock %}
+
+{% block title %}
+   Order Pizza online
+{% endblock %}
+
+
+{% block body %}
+   <div id="pizza_background">
+      {% for type,values in pizzas.items %}
+       <div class="text-center">
+         <h2>{{ type }}</h2>
+       </div>
+         <div class="container d-flex flex-md-row flex-sm-column mt-sm-2 justify-content-around">
+            {% for sub_type,top_values in values.items %}
+               <div class="card" style="width: 18rem;">
+                  {% load static %}
+                  <img src="{% with 'orders/'|add:type|add:sub_type|add:'.jpg' as image_static %}
+                            {% static image_static %}
+                            {% endwith %}" class="img-fluid">
+
+                  {% if sub_type != 'Double Cheese'  %}
+                     <button class="rounded btn btn-light " type="button" id="customize">
+                        <span>Customize</span>
+                     </button>
+                  {% else %}
+                  {% endif %}
+
+                  <div class="card-body">
+
+                     <h5 class="card-title"> {{ sub_type }} </h5>
+                     <p> {{ sub_type }} pizza </p>
+
+                     <div>
+                        <div class="">
+                           <label for="exampleFormControlSelect1" class="items-center">
+                              <div class="pr-5 pb-2">
+                                 <span> Select size of the pizza</span>
+                              </div>
+
+                              <select class="form-control  bg-light " id="{{type}}_{{sub_type|cut:' '}}_select" name="pizzaSize">
+                                 {% for size in sizes %}
+                                    <option class="{{type}}_{{sub_type|cut:' '}}_{{size}}" value="{{size}}">{{size}}</option>
+                                 {% endfor %}
+                              </select>
+                           </label>
+                        </div>
+                        <button type="button" class="btn btn-success" id="{{type}}_{{sub_type|cut:' '}}_btn">
+                           <span>Add</span>
+                           <span class="ml-3" id="{{type}}_{{sub_type|cut:' '}}_price"></span>
+                        </button>
+                     </div>
+
+                  </div>
+               </div>
+            {% endfor %}
+         </div>
+      {% endfor %}
+    </div>
+
+    <div class="popup d-flex container" id="toppings">
+      <div id="leftBackground" >
+         Left Pane
+      </div>
+      <div id="rightBackground">
+         Right Pane
+      </div>
+    </div>
+{% endblock %}
